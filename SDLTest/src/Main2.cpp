@@ -53,7 +53,7 @@ int main(){
 	SDL_RenderCopy(render,bmp_texture,NULL,NULL);
 	SDL_RenderPresent(render);
 
-	SDL_Delay(2000);
+	SDL_Delay(4000);
 
 	SDL_Quit();
 	return 0;
