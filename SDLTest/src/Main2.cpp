@@ -50,7 +50,7 @@ int main(){
 
 
 	SDL_Render_Clear(render); 	// tömmer videobufferten
-	SDL_RenderCopy(render,bmp_texture);
+	SDL_RenderCopy(render,bmp_texture,NULL,NULL);
 	SDL_RenderPresent(render);
 
 	SDL_Delay(2000);
