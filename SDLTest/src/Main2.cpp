@@ -44,17 +44,27 @@ int main(){
 		SDL_Quit();
 		return 1;
 	}
-	//
-
-
-
 
 	SDL_Render_Clear(render); 	// tömmer videobufferten
 	SDL_RenderCopy(render,bmp_texture,NULL,NULL);
 	SDL_RenderPresent(render);
 
+	// LOOP
+	bool running = true;
+	while(running){
+		SDL_Event event;
+		while(SDL_PollEvent(SDL_Event *event)){
+
+		}
+	}
 	SDL_Delay(4000);
 
+
+
+	// CLEAN UP
+	SDL_DestroyTexture(bmp_texture);
+	SDL_DestroyRenderer(render);
+	SDL_DestroyWindow(window);
 	SDL_Quit();
 	return 0;
 }
