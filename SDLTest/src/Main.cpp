@@ -2,26 +2,18 @@
 #include <SDL.h>
 #include <stdio.h>
 
+
+
 int main(){
-
-	/*void init(){		// init SDL and create window
-
-	}
-	void close(){		// remove assets and quit SDL
-
-	}
-	void loadMedia(){	// load media
-
-	}*/
 
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 		std::cout << "Error initializing SDL" << SDL_GetError();
 		return 1;
-
+	std::cout << "INIT EVERYTHING" << std::endl;
 	SDL_Window *window = SDL_CreateWindow("123",100,100,600,800,SDL_WINDOW_SHOWN);
-
+	std::cout << "CREATE EVERYTHING" << std::endl;
 	if(window == nullptr)
-		std::cout << "SDL Error creating window";
+		std::cout << "Error creating window";
 		SDL_Quit();
 		return 1;
 
@@ -51,23 +43,27 @@ int main(){
 	if(bmp_texture == nullptr){
 		SDL_DestroyRenderer(render);
 		SDL_DestroyWindow(window);
-		std::cout << "SDL error SDL_CreateTextureFromSurface";
+		std::cout << "SDL error at SDL_CreateTextureFromSurface";
 		SDL_Quit();
 		return 1;
 	}
+
+	std::cout << "emptying video buffer" << std::endl;
 
 	SDL_RenderClear(render); 	// tömmer videobufferten
 	SDL_RenderCopy(render,bmp_texture,NULL,NULL);
 	SDL_RenderPresent(render);
 
 	// LOOP
-	bool running = true;
+	/*bool running = true;
 	while(running){
 		SDL_Event event;
 		while(SDL_PollEvent(&event)){
 
 		}
 	}
+	*/
+	std::cout << "SDL DELAY" << std::endl;
 	SDL_Delay(4000);
 
 
