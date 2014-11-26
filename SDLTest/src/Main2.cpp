@@ -24,7 +24,7 @@ int main(){
 		return 1;
 	}
 
-	std::string image_path = sökväg till bild
+	std::string image_path = "C:\Users\Per\Downloads\mountain.bmp";
 
 	SDL_Surface *bmp_surface = SDL_LoadBMP(image_path.c_str());
 	if(bmp_surface == nullptr){
@@ -45,7 +45,7 @@ int main(){
 		return 1;
 	}
 
-	SDL_Render_Clear(render); 	// tömmer videobufferten
+	SDL_RenderClear(render); 	// tömmer videobufferten
 	SDL_RenderCopy(render,bmp_texture,NULL,NULL);
 	SDL_RenderPresent(render);
 
@@ -53,7 +53,7 @@ int main(){
 	bool running = true;
 	while(running){
 		SDL_Event event;
-		while(SDL_PollEvent(SDL_Event *event)){
+		while(SDL_PollEvent(&event)){
 
 		}
 	}
@@ -68,4 +68,5 @@ int main(){
 	SDL_Quit();
 	return 0;
 }
+
 
